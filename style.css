@@ -1,0 +1,284 @@
+/* Grundgerüst mit KI (Claude) erstellt, von uns angepasst und erklärt */
+
+/* ===== GRUNDEINSTELLUNGEN ===== */
+/* box-sizing: Rand und Innenabstand werden in die Breite eingerechnet */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #0b0b0b;    /* fast schwarz */
+    color: #B4B2A9;               /* grauer Fließtext */
+    line-height: 1.6;
+}
+
+/* Überschriften sind weiß */
+h1, h2, h3 {
+    color: #ffffff;
+    line-height: 1.2;
+}
+
+h1 { font-size: 40px; margin-bottom: 15px; }
+h2 { font-size: 28px; margin: 40px 0 20px; }
+h3 { font-size: 18px; margin-bottom: 8px; }
+
+p {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+/* ===== MENÜ OBEN ===== */
+.menue {
+    display: flex;                /* Logo und Links nebeneinander */
+    align-items: center;
+    gap: 25px;
+    padding: 15px 40px;
+    border-bottom: 3px solid #8A0A24;   /* rote Linie unter dem Menü */
+}
+
+/* .menue .logo statt nur .logo, sonst gewinnt die Regel .menue a */
+.menue .logo {
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 4px;
+    color: #ffffff;
+    text-decoration: none;
+    margin-right: auto;           /* schiebt die Links nach rechts */
+}
+
+.menue a {
+    color: #B4B2A9;
+    text-decoration: none;
+    font-size: 15px;
+    padding-bottom: 4px;
+}
+
+/* aktiver Link und Hover: weiß mit roter Linie */
+.menue a:hover,
+.menue a.aktiv {
+    color: #ffffff;
+    border-bottom: 2px solid #8A0A24;
+}
+
+.menue a.logo:hover {
+    border-bottom: none;          /* Logo bekommt keine Linie */
+}
+
+/* ===== HAUPTINHALT ===== */
+main {
+    padding: 40px;
+}
+
+/* ===== HERO-BEREICH: Text links, Bild rechts ===== */
+.hero {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.hero-text,
+.hero img {
+    flex: 1;                      /* beide gleich breit */
+    min-width: 0;                 /* sonst ist das Bild so breit wie die Bilddatei */
+}
+
+/* kleiner roter Text über der Überschrift */
+.oberzeile {
+    color: #D9536E;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+/* ===== BILDER ===== */
+img {
+    width: 100%;
+    border-radius: 8px;
+    object-fit: cover;            /* Bild wird nicht verzerrt */
+    background-color: #1c1c1b;    /* dunkel, solange kein Bild da ist */
+    min-height: 200px;
+}
+
+/* ===== KNOPF ===== */
+.knopf {
+    display: inline-block;
+    background-color: #8A0A24;
+    color: #ffffff;
+    padding: 12px 24px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background-color 0.2s;   /* sanfter Farbwechsel */
+}
+
+.knopf:hover {
+    background-color: #5E0718;
+}
+
+/* ===== KARTEN ===== */
+.karten {
+    display: flex;
+    flex-wrap: wrap;              /* zu wenig Platz = nächste Zeile */
+    gap: 20px;
+}
+
+.karte {
+    flex: 1;
+    min-width: 220px;
+    background-color: #1c1c1b;
+    border-left: 4px solid #8A0A24;     /* roter Streifen links */
+    padding: 20px;
+}
+
+.karte img {
+    min-height: 150px;
+    height: 150px;
+    margin-bottom: 12px;
+}
+
+/* roter Link unter einer Karte */
+.mehr {
+    color: #D9536E;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+/* ===== TABELLE ===== */
+.tabellen-box {
+    overflow-x: auto;             /* am Handy seitlich scrollen */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #1c1c1b;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #5F5E5A;
+}
+
+th {
+    background-color: #8A0A24;
+    color: #ffffff;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    background-color: #8A0A24;
+    color: #ffffff;
+    padding: 20px 40px;
+    font-size: 14px;
+}
+
+footer a {
+    color: #ffffff;
+    margin-right: 15px;
+}
+
+footer p {
+    margin: 10px 0 0;
+    font-size: 14px;
+}
+
+/* ===== NUR SERVICE-SEITE ===== */
+/* Abstand über dem Knopf unter der Tabelle */
+.knopf-zeile {
+    margin-top: 25px;
+}
+
+/* ===== NUR HÄNDLER-SEITE ===== */
+/* Händler-Karten untereinander mit Abstand */
+.hero-text .karte {
+    margin-bottom: 15px;
+}
+
+/* eingebettete Google-Maps-Karte */
+.karte-iframe {
+    flex: 1;
+    width: 100%;
+    height: 300px;
+    border: none;
+    border-radius: 8px;
+    background-color: #1c1c1b;
+}
+
+/* Formular: Felder untereinander */
+.formular {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-width: 500px;
+}
+
+.formular label {
+    color: #ffffff;
+    font-size: 14px;
+}
+
+.formular input,
+.formular textarea {
+    background-color: #1c1c1b;
+    border: 1px solid #5F5E5A;
+    border-radius: 6px;
+    color: #ffffff;
+    padding: 10px;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Rahmen wird rot, wenn man ins Feld klickt */
+.formular input:focus,
+.formular textarea:focus {
+    border-color: #8A0A24;
+    outline: none;
+}
+
+/* button sieht aus wie ein a-Knopf */
+.formular button {
+    border: none;
+    font-size: 16px;
+    cursor: pointer;          /* Hand-Symbol beim Drüberfahren */
+    align-self: flex-start;   /* Knopf nicht über volle Breite */
+    margin-top: 10px;
+}
+
+/* ===== HANDY-ANSICHT (768px oder schmäler) ===== */
+@media (max-width: 768px) {
+
+    .menue {
+        flex-wrap: wrap;          /* Links rutschen in die nächste Zeile */
+        gap: 12px;
+        padding: 12px 15px;
+    }
+
+    .menue .logo {
+        width: 100%;              /* Logo in eigener Zeile */
+        font-size: 20px;
+    }
+
+    .menue a {
+        font-size: 14px;
+    }
+
+    main {
+        padding: 15px;
+    }
+
+    .hero {
+        flex-direction: column;   /* Bild unter den Text */
+    }
+
+    h1 { font-size: 28px; }
+    h2 { font-size: 22px; }
+    h3 { font-size: 16px; }
+    p  { font-size: 15px; }
+
+    footer {
+        padding: 15px;
+        font-size: 13px;
+    }
+}

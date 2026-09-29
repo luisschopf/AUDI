@@ -1,20 +1,69 @@
 <!DOCTYPE html>
 <html lang="de">
+<!-- Grundgerüst mit KI (Claude) erstellt, von uns angepasst und erklärt -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Händler – Audi Österreich</title>
     <link rel="stylesheet" href="style.css">
-    <title>Händler</title>
 </head>
 <body>
-      <nav class="menue">
-    <a href="index.html" class="logo">AUDI</a>
-    <a href="index.html" class="aktiv">Start</a>
-    <a href="modelle.html">Modelle</a>
-    <a href="elektro.html">Elektro</a>
-    <a href="service.html">Service</a>
-    <a href="haendler.html">Händler</a>
-</nav>
-    
+
+    <!-- ===== MENÜ OBEN ===== -->
+    <nav class="menue">
+        <a href="index.html" class="logo">AUDI</a>
+        <a href="index.html">Start</a>
+        <a href="modelle.html">Modelle</a>
+        <a href="elektro.html">Elektro</a>
+        <a href="service.html">Service</a>
+        <a href="haendler.html" class="aktiv">Händler</a>
+    </nav>
+
+    <main>
+
+        <h1>Audi Partner in deiner Nähe.</h1>
+
+        <!-- ===== HÄNDLER-LISTE links, KARTE rechts ===== -->
+        <section class="hero">
+            <div class="hero-text">
+                <!-- Platzhalter-Adressen: echte Adressen von audi.at übernehmen -->
+                <div class="karte">
+                    <h3>Audi Partner Innsbruck</h3>
+                    <p>Musterstraße 1, 6020 Innsbruck</p>
+                </div>
+                <div class="karte">
+                    <h3>Audi Partner Imst</h3>
+                    <p>Musterweg 5, 6460 Imst</p>
+                </div>
+            </div>
+            <!-- Google-Maps-Karte, eingebunden mit iframe -->
+            <iframe class="karte-iframe" src="https://maps.google.com/maps?q=Imst&output=embed" title="Karte"></iframe>
+        </section>
+
+        <!-- ===== KONTAKTFORMULAR ===== -->
+        <h2>Schreib uns</h2>
+        <form class="formular">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name">
+
+            <label for="email">E-Mail</label>
+            <input type="email" id="email" name="email">
+
+            <label for="nachricht">Nachricht</label>
+            <textarea id="nachricht" name="nachricht" rows="5"></textarea>
+
+            <button type="submit" class="knopf">Absenden</button>
+        </form>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <a href="#">Impressum</a>
+        <a href="#">Datenschutz</a>
+        <a href="haendler.html">Kontakt</a>
+        <p>Schulprojekt HAK Imst – Redesign von audi.at. Inhalte und Bilder: Audi AG.</p>
+    </footer>
+
 </body>
 </html>
