@@ -1,7 +1,7 @@
-/* Grundgerüst mit KI (Claude) erstellt, von uns angepasst und erklärt */
+
 
 /* ===== GRUNDEINSTELLUNGEN ===== */
-/* box-sizing: Rand und Innenabstand werden in die Breite eingerechnet */
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -10,8 +10,8 @@
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #0b0b0b;    /* fast schwarz */
-    color: #B4B2A9;               /* grauer Fließtext */
+    background-color: #0b0b0b;    
+    color: #B4B2A9;               
     line-height: 1.6;
 }
 
@@ -32,21 +32,21 @@ p {
 
 /* ===== MENÜ OBEN ===== */
 .menue {
-    display: flex;                /* Logo und Links nebeneinander */
+    display: flex;                
     align-items: center;
     gap: 25px;
     padding: 15px 40px;
-    border-bottom: 3px solid #8A0A24;   /* rote Linie unter dem Menü */
+    border-bottom: 3px solid #8A0A24;   
 }
 
-/* .menue .logo statt nur .logo, sonst gewinnt die Regel .menue a */
+
 .menue .logo {
     font-size: 22px;
     font-weight: bold;
     letter-spacing: 4px;
     color: #ffffff;
     text-decoration: none;
-    margin-right: auto;           /* schiebt die Links nach rechts */
+    margin-right: auto;          
 }
 
 .menue a {
@@ -56,7 +56,7 @@ p {
     padding-bottom: 4px;
 }
 
-/* aktiver Link und Hover: weiß mit roter Linie */
+
 .menue a:hover,
 .menue a.aktiv {
     color: #ffffff;
@@ -64,7 +64,7 @@ p {
 }
 
 .menue a.logo:hover {
-    border-bottom: none;          /* Logo bekommt keine Linie */
+    border-bottom: none;          
 }
 
 /* ===== HAUPTINHALT ===== */
@@ -72,7 +72,7 @@ main {
     padding: 40px;
 }
 
-/* ===== HERO-BEREICH: Text links, Bild rechts ===== */
+/* ===== HERO-BEREICH: ===== */
 .hero {
     display: flex;
     gap: 30px;
@@ -81,11 +81,11 @@ main {
 
 .hero-text,
 .hero img {
-    flex: 1;                      /* beide gleich breit */
-    min-width: 0;                 /* sonst ist das Bild so breit wie die Bilddatei */
+    flex: 1;         /* beide gleich groß    */         
+    min-width: 0;    /*bild sonst gleich groß wie Bilddatei*/
 }
 
-/* kleiner roter Text über der Überschrift */
+
 .oberzeile {
     color: #D9536E;
     font-size: 14px;
@@ -97,7 +97,7 @@ img {
     width: 100%;
     border-radius: 8px;
     object-fit: cover;            /* Bild wird nicht verzerrt */
-    background-color: #1c1c1b;    /* dunkel, solange kein Bild da ist */
+    background-color: #1c1c1b;   
     min-height: 200px;
 }
 
@@ -109,7 +109,6 @@ img {
     padding: 12px 24px;
     border-radius: 6px;
     text-decoration: none;
-    transition: background-color 0.2s;   /* sanfter Farbwechsel */
 }
 
 .knopf:hover {
@@ -127,7 +126,7 @@ img {
     flex: 1;
     min-width: 220px;
     background-color: #1c1c1b;
-    border-left: 4px solid #8A0A24;     /* roter Streifen links */
+    border-left: 4px solid #8A0A24;     
     padding: 20px;
 }
 
@@ -137,7 +136,7 @@ img {
     margin-bottom: 12px;
 }
 
-/* roter Link unter einer Karte */
+
 .mehr {
     color: #D9536E;
     text-decoration: none;
@@ -206,7 +205,7 @@ footer p {
     background-color: #1c1c1b;
 }
 
-/* Formular: Felder untereinander */
+/* Formular:*/
 .formular {
     display: flex;
     flex-direction: column;
@@ -230,7 +229,7 @@ footer p {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Rahmen wird rot, wenn man ins Feld klickt */
+/* Rahmen wird rot, wenn man ins Feld klickt|| mit KI */
 .formular input:focus,
 .formular textarea:focus {
     border-color: #8A0A24;
